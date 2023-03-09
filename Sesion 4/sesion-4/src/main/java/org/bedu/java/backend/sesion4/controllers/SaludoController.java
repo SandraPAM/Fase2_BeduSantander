@@ -30,14 +30,14 @@ public class SaludoController {
 
     @PutMapping("/saludo")
     public Saludo saludoPut(@RequestBody Saludo saludo){
-        Saludo saludo1 = new Saludo();
+        saludo.setFechaNacimiento(saludo.getFechaNacimiento().plusDays(1));
 
-        saludo1.setNombre(saludo.getNombre());
-        saludo1.setMensaje(saludo.getMensaje());
-        saludo1.setEdad(saludo.getEdad());
-        saludo1.setFechaNacimiento(saludo.getFechaNacimiento().plusDays(1));
+        return saludo;
 
-        return saludo1;
+    }
 
+    @DeleteMapping("/saludo/{id}")
+    public String saludoDeleted(@PathVariable int id){
+        return id + " eliminado!!!";
     }
 }
