@@ -1,6 +1,8 @@
 package org.bedu.java.backend.session4.Postwork.model;
 
-public class Persona {
+import java.util.Objects;
+
+public class Persona implements Comparable<Persona>{
 
     private String nombre;
     private String telefono;
@@ -33,5 +35,23 @@ public class Persona {
     public String toString() {
         return "Persona{nombre='" + nombre +
                 "', telefono='" + telefono + "'}";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Persona persona = (Persona) obj;
+        return this.nombre.equals(persona.nombre);
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        return this.nombre.compareTo(o.nombre);
     }
 }
