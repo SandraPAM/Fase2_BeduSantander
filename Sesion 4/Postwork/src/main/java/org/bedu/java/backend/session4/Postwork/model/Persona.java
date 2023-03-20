@@ -1,19 +1,27 @@
 package org.bedu.java.backend.session4.Postwork.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
 import java.util.Objects;
 
 public class Persona implements Comparable<Persona>{
 
+    @NotBlank(message = "El nombre de la persona es un campo obligatorio.")
     private String nombre;
+    @Pattern(regexp = "^(\\d{2,4}[- ]?){2}\\d{4}$",
+    message = "El teléfono debe tener un formato de ##-####-####")
     private String telefono;
 
     public Persona(){
     }
 
+    /*
     public Persona(String nombre, String telefono){
         this.nombre = nombre;
         this.telefono = telefono;
     }
+     */
 
     public String getNombre() {
         return nombre;

@@ -21,11 +21,14 @@ public class AgendaService {
 
     public Persona guardaPersona(Persona persona){
 
+
         String telefono = persona.getTelefono();
 
+        /*
         if(!validadorTelefono.isValido(telefono) & validadorTelefono.isValidTenDigits(telefono)) {
             return null;
         }
+         */
 
         telefono = validadorTelefono.limpiaNumero(telefono);
 
