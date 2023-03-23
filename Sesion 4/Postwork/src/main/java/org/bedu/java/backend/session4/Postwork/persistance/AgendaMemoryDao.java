@@ -8,8 +8,10 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-@Repository
+//This class is no longer need with the JPA
+//@Repository
 public class AgendaMemoryDao {
+    /*
     private static final SortedSet<Persona> personas = new TreeSet<>();
     private final FormateadorTelefono formateadorTelefono;
 
@@ -25,4 +27,6 @@ public class AgendaMemoryDao {
     public Set<Persona> getPersonas(){
         return personas;
     }
+
+     */
 }
