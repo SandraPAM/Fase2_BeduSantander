@@ -38,4 +38,19 @@ class EquipoRepositoryTest {
         assertNotNull(e.getId());
     }
 
+    @Test
+    @DisplayName("Buscar port nombre")
+    void canFind(){
+        String nombre = "prueba";
+
+        Equipo e = new Equipo();
+        e.setNombre(nombre);
+
+        repository.save(e);
+
+        Iterable<Equipo> lista = repository.findAllByNombre(nombre);
+
+        assertTrue(lista.iterator().hasNext());
+    }
+
 }
